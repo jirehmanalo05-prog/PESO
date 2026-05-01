@@ -131,7 +131,7 @@ export default function Home() {
       <section
         className="relative w-full bg-gray-500 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/BG-Peso.jpg')", // <-- swap "none" with your image URL
+          backgroundImage: "url('/BG-Peso.jpg')", 
           minHeight: 400, paddingTop: 64,
         }}
       >
