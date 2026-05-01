@@ -15,15 +15,30 @@ export default function Home() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
-              {['Home', 'About Us', 'Job Vacancies', 'Employers'].map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="text-sm font-medium text-gray-700 hover:text-[#1e3a8a] transition-colors"
-                >
-                  {item}
-                </a>
-              ))}
+              <a
+                href="/"
+                className="text-sm font-medium text-[#1e3a8a] hover:text-[#1e3a8a] transition-colors"
+              >
+                Home
+              </a>
+              <a
+                href="/about"
+                className="text-sm font-medium text-gray-700 hover:text-[#1e3a8a] transition-colors"
+              >
+                About Us
+              </a>
+              <a
+                href="/job-vacancies"
+                className="text-sm font-medium text-gray-700 hover:text-[#1e3a8a] transition-colors"
+              >
+                Job Vacancies
+              </a>
+              <a
+                href="/employers"
+                className="text-sm font-medium text-gray-700 hover:text-[#1e3a8a] transition-colors"
+              >
+                Employers
+              </a>
             </div>
 
             {/* Buttons */}
@@ -61,12 +76,12 @@ export default function Home() {
               Find your dream job or hire the best talent today.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-7 py-3.5 bg-yellow-400 text-[#1e3a8a] font-bold rounded-lg hover:bg-yellow-500 transition-all transform hover:scale-105 shadow-lg flex items-center gap-2">
+              <a href="/job-vacancies" className="px-7 py-3.5 bg-yellow-400 text-[#1e3a8a] font-bold rounded-lg hover:bg-yellow-500 transition-all transform hover:scale-105 shadow-lg flex items-center gap-2">
                 <span>Browse Jobs</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </button>
+              </a>
               <button className="px-7 py-3.5 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all">
                 Register Now
               </button>
@@ -121,7 +136,7 @@ export default function Home() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   We connect qualified candidates with employers looking for talent across various industries and sectors.
                 </p>
-                <a href="#" className="text-[#1e3a8a] font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                <a href="/job-vacancies" className="text-[#1e3a8a] font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                   Learn more
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -143,7 +158,7 @@ export default function Home() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   Professional counseling and career development support to help you navigate your professional journey.
                 </p>
-                <a href="#" className="text-red-500 font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                <a href="/about" className="text-red-500 font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                   Learn more
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -165,7 +180,7 @@ export default function Home() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   Access to training programs and skills development opportunities to enhance your employability.
                 </p>
-                <a href="#" className="text-yellow-600 font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                <a href="/about" className="text-yellow-600 font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                   Learn more
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -184,12 +199,12 @@ export default function Home() {
           <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
             Join thousands of job seekers who found their dream careers through PESO Mabini
           </p>
-          <button className="px-8 py-3.5 bg-yellow-400 text-[#1e3a8a] font-bold rounded-lg hover:bg-yellow-500 transition-all shadow-lg inline-flex items-center gap-2">
+          <a href="/job-vacancies" className="px-8 py-3.5 bg-yellow-400 text-[#1e3a8a] font-bold rounded-lg hover:bg-yellow-500 transition-all shadow-lg inline-flex items-center gap-2">
             <span>Get Started Today</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </button>
+          </a>
         </div>
       </section>
 
@@ -211,9 +226,9 @@ export default function Home() {
             <div>
               <h4 className="text-white font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition">About Us</a></li>
-                <li><a href="#" className="hover:text-white transition">Job Vacancies</a></li>
-                <li><a href="#" className="hover:text-white transition">Employers</a></li>
+                <li><a href="/about" className="hover:text-white transition">About Us</a></li>
+                <li><a href="/job-vacancies" className="hover:text-white transition">Job Vacancies</a></li>
+                <li><a href="/employers" className="hover:text-white transition">Employers</a></li>
                 <li><a href="#" className="hover:text-white transition">Contact</a></li>
               </ul>
             </div>
