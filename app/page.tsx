@@ -75,53 +75,46 @@ const badgeColors: Record<string, string> = {
  
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 font-sans antialiased">
- 
-      {/* ════════════════════════
-          NAVBAR
-      ════════════════════════ */}
-      <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
- 
-            {/* Logo */}
-            <div className="flex items-center">
-              <span className="font-extrabold text-white text-lg tracking-tight leading-none drop-shadow">
-                PESO<span className="text-yellow-300"> Mabini</span>
-              </span>
-            </div>
- 
-            {/* Nav Links */}
-            <div className="flex items-center gap-8">
-              {[
-                { label: "Home", href: "/" },
-                { label: "About Us", href: "/about" },
-                { label: "Job Vacancies", href: "/job-vacancies" },
-                { label: "Employers", href: "/employers" },
-              ].map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-sm font-semibold text-white/90 hover:text-white transition-colors border-b-2 border-transparent hover:border-white pb-0.5 drop-shadow"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
- 
-            {/* Auth Buttons */}
-            <div className="flex items-center gap-2">
-              <button className="px-5 py-2 text-sm font-semibold text-white border border-white/70 rounded hover:bg-white/10 transition-colors backdrop-blur-sm">
-                Login
-              </button>
-              <button className="px-5 py-2 text-sm font-semibold text-blue-900 bg-white rounded hover:bg-gray-100 transition-colors shadow">
-                Register
-              </button>
-            </div>
+    <div className="min-h-screen bg-gray-50 font-sans antialiased lg:flex">
+      <aside className="w-full bg-slate-900 text-white p-6 lg:w-72 xl:w-80 lg:min-h-screen lg:sticky lg:top-0">
+        <div className="flex items-center gap-3 mb-10">
+          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-yellow-400 text-sm font-black text-slate-900">
+            PM
+          </div>
+          <div>
+            <p className="text-lg font-black tracking-tight">PESO Mabini</p>
+            <p className="text-sm text-slate-300">Employment Services</p>
           </div>
         </div>
-      </nav>
- 
+
+        <nav className="space-y-2">
+          {[
+            { label: "Home", href: "/" },
+            { label: "About Us", href: "/about" },
+            { label: "Job Vacancies", href: "/job-vacancies" },
+            { label: "Employers", href: "/employers" },
+          ].map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="flex items-center rounded-lg px-3 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="mt-8 space-y-3">
+          <button className="w-full rounded-lg border border-white/20 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10">
+            Login
+          </button>
+          <button className="w-full rounded-lg bg-yellow-400 px-4 py-2.5 text-sm font-semibold text-slate-900 transition-colors hover:bg-yellow-300">
+            Register
+          </button>
+        </div>
+      </aside>
+
+      <div className="flex-1">
       {/* ════════════════════════
           HERO — Static background image
           ↓ Replace backgroundImage below with your actual photo path.
@@ -129,10 +122,9 @@ export default function Home() {
           The dark overlay (bg-black/40) will keep text readable.
       ════════════════════════ */}
       <section
-        className="relative w-full bg-gray-500 bg-cover bg-center bg-no-repeat"
+        className="relative w-full h-screen bg-gray-500 bg-contain bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/BG-Peso.jpg')", 
-          minHeight: 400, paddingTop: 64,
+          backgroundImage: "url('/BG-Peso.jpg')",
         }}
       >
         {/* Empty — your background image will fill this space */}
@@ -357,6 +349,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
