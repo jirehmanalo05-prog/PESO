@@ -1,4 +1,6 @@
 "use client";
+
+import { useState } from "react";
  
 const jobPostings = [
   {
@@ -74,20 +76,40 @@ const badgeColors: Record<string, string> = {
 };
  
 export default function Home() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
   return (
     <div className="min-h-screen bg-gray-50 font-sans antialiased lg:flex">
-      <aside className="w-full bg-slate-900 text-white p-6 lg:w-72 xl:w-80 lg:min-h-screen lg:sticky lg:top-0">
-        <div className="flex items-center gap-3 mb-10">
-          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-yellow-400 text-sm font-black text-slate-900">
-            PM
+      <div
+        className={`fixed inset-0 z-30 bg-slate-950/50 transition-opacity lg:hidden ${isSidebarOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}
+        onClick={() => setIsSidebarOpen(false)}
+      />
+
+      <aside
+        className={`fixed inset-y-0 left-0 z-40 flex h-screen w-72 flex-col bg-slate-900 p-5 text-white shadow-2xl transition-all duration-300 lg:sticky lg:top-0 lg:h-auto lg:w-72 xl:w-80 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:w-20 lg:translate-x-0"}`}
+      >
+        <div className="flex items-center justify-between">
+          <div className={`flex items-center gap-3 ${!isSidebarOpen ? "lg:justify-center" : ""}`}>
+            <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-yellow-400 text-sm font-black text-slate-900">
+              PM
+            </div>
+            <div className={`${isSidebarOpen ? "block" : "hidden lg:hidden"}`}>
+              <p className="text-lg font-black tracking-tight">PESO Mabini</p>
+              <p className="text-sm text-slate-300">Employment Services</p>
+            </div>
           </div>
-          <div>
-            <p className="text-lg font-black tracking-tight">PESO Mabini</p>
-            <p className="text-sm text-slate-300">Employment Services</p>
-          </div>
+
+          <button
+            type="button"
+            onClick={() => setIsSidebarOpen((prev) => !prev)}
+            className="rounded-full border border-white/15 p-2 text-slate-200 transition-colors hover:bg-white/10 hover:text-white"
+            aria-label={isSidebarOpen ? "Collapse navigation" : "Open navigation"}
+          >
+            {isSidebarOpen ? "←" : "→"}
+          </button>
         </div>
 
-        <nav className="space-y-2">
+        <nav className="mt-8 space-y-2">
           {[
             { label: "Home", href: "/" },
             { label: "About Us", href: "/about" },
@@ -97,24 +119,37 @@ export default function Home() {
             <a
               key={link.label}
               href={link.href}
-              className="flex items-center rounded-lg px-3 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/10 hover:text-white"
+              className={`flex items-center rounded-lg px-3 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/10 hover:text-white ${!isSidebarOpen ? "justify-center lg:px-2" : ""}`}
             >
-              {link.label}
+              <span className={`${isSidebarOpen ? "inline" : "hidden lg:inline"}`}>{link.label}</span>
+              {!isSidebarOpen ? <span className="hidden lg:inline">•</span> : null}
             </a>
           ))}
         </nav>
 
-        <div className="mt-8 space-y-3">
-          <button className="w-full rounded-lg border border-white/20 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10">
-            Login
-          </button>
-          <button className="w-full rounded-lg bg-yellow-400 px-4 py-2.5 text-sm font-semibold text-slate-900 transition-colors hover:bg-yellow-300">
-            Register
-          </button>
+        <div className="mt-auto border-t border-white/10 pt-6">
+          <div className={`flex gap-2 ${isSidebarOpen ? "flex-col sm:flex-row lg:flex-col" : "flex-col"}`}>
+            <button className="rounded-lg border border-white/20 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10">
+              {isSidebarOpen ? "Login" : "↪"}
+            </button>
+            <button className="rounded-lg bg-yellow-400 px-4 py-2.5 text-sm font-semibold text-slate-900 transition-colors hover:bg-yellow-300">
+              {isSidebarOpen ? "Register" : "✓"}
+            </button>
+          </div>
         </div>
       </aside>
 
       <div className="flex-1">
+        {!isSidebarOpen ? (
+          <button
+            type="button"
+            onClick={() => setIsSidebarOpen(true)}
+            className="fixed left-4 top-4 z-30 rounded-full bg-slate-900 p-3 text-white shadow-lg transition-colors hover:bg-slate-800"
+            aria-label="Open navigation"
+          >
+            ☰
+          </button>
+        ) : null}
       {/* ════════════════════════
           HERO — Static background image
           ↓ Replace backgroundImage below with your actual photo path.
