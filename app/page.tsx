@@ -76,7 +76,7 @@ const badgeColors: Record<string, string> = {
 };
  
 export default function Home() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans antialiased lg:flex">
@@ -86,11 +86,11 @@ export default function Home() {
       />
 
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex h-screen w-72 flex-col bg-slate-900 p-5 text-white shadow-2xl transition-all duration-300 lg:sticky lg:top-0 lg:h-auto lg:w-72 xl:w-80 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:w-20 lg:translate-x-0"}`}
+        className={`fixed inset-y-0 left-0 z-40 flex h-screen flex-col border-r border-blue-900/20 bg-gradient-to-b from-slate-900 via-slate-900 to-blue-950 p-4 text-white shadow-2xl transition-all duration-300 lg:sticky lg:top-0 lg:h-auto ${isSidebarOpen ? "w-72 translate-x-0" : "w-20 -translate-x-0 lg:w-20"}`}
       >
         <div className="flex items-center justify-between">
-          <div className={`flex items-center gap-3 ${!isSidebarOpen ? "lg:justify-center" : ""}`}>
-            <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-yellow-400 text-sm font-black text-slate-900">
+          <div className={`flex items-center ${!isSidebarOpen ? "justify-center" : "gap-3"}`}>
+            <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-yellow-400 text-sm font-black text-slate-900 shadow-lg shadow-yellow-400/20">
               PM
             </div>
             <div className={`${isSidebarOpen ? "block" : "hidden lg:hidden"}`}>
@@ -102,7 +102,7 @@ export default function Home() {
           <button
             type="button"
             onClick={() => setIsSidebarOpen((prev) => !prev)}
-            className="rounded-full border border-white/15 p-2 text-slate-200 transition-colors hover:bg-white/10 hover:text-white"
+            className="rounded-full border border-blue-400/30 bg-blue-600/80 p-2 text-slate-100 shadow-md transition-colors hover:bg-red-500"
             aria-label={isSidebarOpen ? "Collapse navigation" : "Open navigation"}
           >
             {isSidebarOpen ? "←" : "→"}
@@ -115,21 +115,24 @@ export default function Home() {
             { label: "About Us", href: "/about" },
             { label: "Job Vacancies", href: "/job-vacancies" },
             { label: "Employers", href: "/employers" },
-          ].map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className={`flex items-center rounded-lg px-3 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/10 hover:text-white ${!isSidebarOpen ? "justify-center lg:px-2" : ""}`}
-            >
-              <span className={`${isSidebarOpen ? "inline" : "hidden lg:inline"}`}>{link.label}</span>
-              {!isSidebarOpen ? <span className="hidden lg:inline">•</span> : null}
-            </a>
-          ))}
+          ].map((link, index) => {
+            const accent = index % 3 === 0 ? "hover:bg-blue-600" : index % 3 === 1 ? "hover:bg-red-600" : "hover:bg-yellow-500 hover:text-slate-900";
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                className={`flex items-center rounded-lg px-3 py-3 text-sm font-semibold text-slate-200 transition-colors ${accent} ${!isSidebarOpen ? "justify-center lg:px-2" : ""}`}
+              >
+                <span className={`${isSidebarOpen ? "inline" : "hidden lg:inline"}`}>{link.label}</span>
+                {!isSidebarOpen ? <span className="hidden lg:inline">•</span> : null}
+              </a>
+            );
+          })}
         </nav>
 
         <div className="mt-auto border-t border-white/10 pt-6">
           <div className={`flex gap-2 ${isSidebarOpen ? "flex-col sm:flex-row lg:flex-col" : "flex-col"}`}>
-            <button className="rounded-lg border border-white/20 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10">
+            <button className="rounded-lg border border-blue-400/30 bg-slate-800/80 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-600">
               {isSidebarOpen ? "Login" : "↪"}
             </button>
             <button className="rounded-lg bg-yellow-400 px-4 py-2.5 text-sm font-semibold text-slate-900 transition-colors hover:bg-yellow-300">
@@ -140,16 +143,14 @@ export default function Home() {
       </aside>
 
       <div className="flex-1">
-        {!isSidebarOpen ? (
-          <button
-            type="button"
-            onClick={() => setIsSidebarOpen(true)}
-            className="fixed left-4 top-4 z-30 rounded-full bg-slate-900 p-3 text-white shadow-lg transition-colors hover:bg-slate-800"
-            aria-label="Open navigation"
-          >
-            ☰
-          </button>
-        ) : null}
+        <button
+          type="button"
+          onClick={() => setIsSidebarOpen((prev) => !prev)}
+          className="fixed left-4 top-4 z-30 rounded-full border border-blue-400/30 bg-slate-900 p-3 text-white shadow-lg transition-colors hover:bg-blue-700"
+          aria-label={isSidebarOpen ? "Collapse navigation" : "Open navigation"}
+        >
+          ☰
+        </button>
       {/* ════════════════════════
           HERO — Static background image
           ↓ Replace backgroundImage below with your actual photo path.
