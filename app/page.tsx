@@ -143,16 +143,7 @@ export default function Home() {
             </div>
           </>
         ) : (
-          <div className="flex h-full flex-col items-center justify-start pt-2">
-            <button
-              type="button"
-              onClick={() => setIsSidebarOpen(true)}
-              className="flex h-11 w-11 items-center justify-center rounded-lg border border-blue-400/30 bg-blue-600/80 text-xl text-white shadow-md transition-colors hover:bg-blue-500"
-              aria-label="Open navigation"
-            >
-              ☰
-            </button>
-          </div>
+          <div className="h-full" />
         )}
       </aside>
 
@@ -160,8 +151,8 @@ export default function Home() {
         <button
           type="button"
           onClick={() => setIsSidebarOpen((prev) => !prev)}
-          className="fixed left-4 top-4 z-30 rounded-full border border-blue-400/30 bg-slate-900 p-3 text-white shadow-lg transition-colors hover:bg-blue-700"
-          aria-label={isSidebarOpen ? "Collapse navigation" : "Open navigation"}
+          className={`fixed left-4 top-4 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-blue-400/30 bg-slate-900 text-xl text-white shadow-xl transition-colors hover:bg-blue-700 ${isSidebarOpen ? "bg-slate-900" : "bg-blue-700"}`}
+          aria-label={isSidebarOpen ? "Close navigation" : "Open navigation"}
         >
           ☰
         </button>
