@@ -90,25 +90,14 @@ export default function Home() {
       >
         {isSidebarOpen ? (
           <>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-yellow-400 text-sm font-black text-slate-900 shadow-lg shadow-yellow-400/20">
-                  PM
-                </div>
-                <div>
-                  <p className="text-lg font-black tracking-tight">PESO Mabini</p>
-                  <p className="text-sm text-slate-300">Employment Services</p>
-                </div>
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-yellow-400 text-sm font-black text-slate-900 shadow-lg shadow-yellow-400/20">
+                PM
               </div>
-
-              <button
-                type="button"
-                onClick={() => setIsSidebarOpen(false)}
-                className="rounded-full border border-blue-400/30 bg-blue-600/80 p-2 text-slate-100 shadow-md transition-colors hover:bg-red-500"
-                aria-label="Collapse navigation"
-              >
-                ←
-              </button>
+              <div>
+                <p className="text-lg font-black tracking-tight">PESO Mabini</p>
+                <p className="text-sm text-slate-300">Employment Services</p>
+              </div>
             </div>
 
             <nav className="mt-8 space-y-2">
