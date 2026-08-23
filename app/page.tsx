@@ -86,7 +86,7 @@ export default function Home() {
       />
 
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex h-screen flex-col border-r border-blue-900/20 bg-gradient-to-b from-slate-900 via-slate-900 to-blue-950 p-4 text-white shadow-2xl transition-all duration-300 lg:sticky lg:top-0 lg:h-auto ${isSidebarOpen ? "w-72 translate-x-0" : "w-20 -translate-x-0 lg:w-20"}`}
+        className={`fixed inset-y-0 left-0 z-40 flex h-screen flex-col transition-all duration-300 lg:sticky lg:top-0 lg:h-auto ${isSidebarOpen ? "w-72 translate-x-0 border-r border-blue-900/20 bg-gradient-to-b from-slate-900 via-slate-900 to-blue-950 p-4 text-white shadow-2xl" : "w-0 -translate-x-full overflow-hidden border-r-0 bg-transparent p-0 shadow-none"}`}
       >
         {isSidebarOpen ? (
           <>
