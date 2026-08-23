@@ -88,58 +88,72 @@ export default function Home() {
       <aside
         className={`fixed inset-y-0 left-0 z-40 flex h-screen flex-col border-r border-blue-900/20 bg-gradient-to-b from-slate-900 via-slate-900 to-blue-950 p-4 text-white shadow-2xl transition-all duration-300 lg:sticky lg:top-0 lg:h-auto ${isSidebarOpen ? "w-72 translate-x-0" : "w-20 -translate-x-0 lg:w-20"}`}
       >
-        <div className="flex items-center justify-between">
-          <div className={`flex items-center ${!isSidebarOpen ? "justify-center" : "gap-3"}`}>
-            <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-yellow-400 text-sm font-black text-slate-900 shadow-lg shadow-yellow-400/20">
-              PM
-            </div>
-            <div className={`${isSidebarOpen ? "block" : "hidden lg:hidden"}`}>
-              <p className="text-lg font-black tracking-tight">PESO Mabini</p>
-              <p className="text-sm text-slate-300">Employment Services</p>
-            </div>
-          </div>
+        {isSidebarOpen ? (
+          <>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-yellow-400 text-sm font-black text-slate-900 shadow-lg shadow-yellow-400/20">
+                  PM
+                </div>
+                <div>
+                  <p className="text-lg font-black tracking-tight">PESO Mabini</p>
+                  <p className="text-sm text-slate-300">Employment Services</p>
+                </div>
+              </div>
 
-          <button
-            type="button"
-            onClick={() => setIsSidebarOpen((prev) => !prev)}
-            className="rounded-full border border-blue-400/30 bg-blue-600/80 p-2 text-slate-100 shadow-md transition-colors hover:bg-red-500"
-            aria-label={isSidebarOpen ? "Collapse navigation" : "Open navigation"}
-          >
-            {isSidebarOpen ? "←" : "→"}
-          </button>
-        </div>
-
-        <nav className="mt-8 space-y-2">
-          {[
-            { label: "Home", href: "/" },
-            { label: "About Us", href: "/about" },
-            { label: "Job Vacancies", href: "/job-vacancies" },
-            { label: "Employers", href: "/employers" },
-          ].map((link, index) => {
-            const accent = index % 3 === 0 ? "hover:bg-blue-600" : index % 3 === 1 ? "hover:bg-red-600" : "hover:bg-yellow-500 hover:text-slate-900";
-            return (
-              <a
-                key={link.label}
-                href={link.href}
-                className={`flex items-center rounded-lg px-3 py-3 text-sm font-semibold text-slate-200 transition-colors ${accent} ${!isSidebarOpen ? "justify-center lg:px-2" : ""}`}
+              <button
+                type="button"
+                onClick={() => setIsSidebarOpen(false)}
+                className="rounded-full border border-blue-400/30 bg-blue-600/80 p-2 text-slate-100 shadow-md transition-colors hover:bg-red-500"
+                aria-label="Collapse navigation"
               >
-                <span className={`${isSidebarOpen ? "inline" : "hidden lg:inline"}`}>{link.label}</span>
-                {!isSidebarOpen ? <span className="hidden lg:inline">•</span> : null}
-              </a>
-            );
-          })}
-        </nav>
+                ←
+              </button>
+            </div>
 
-        <div className="mt-auto border-t border-white/10 pt-6">
-          <div className={`flex gap-2 ${isSidebarOpen ? "flex-col sm:flex-row lg:flex-col" : "flex-col"}`}>
-            <button className="rounded-lg border border-blue-400/30 bg-slate-800/80 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-600">
-              {isSidebarOpen ? "Login" : "↪"}
-            </button>
-            <button className="rounded-lg bg-yellow-400 px-4 py-2.5 text-sm font-semibold text-slate-900 transition-colors hover:bg-yellow-300">
-              {isSidebarOpen ? "Register" : "✓"}
+            <nav className="mt-8 space-y-2">
+              {[
+                { label: "Home", href: "/" },
+                { label: "About Us", href: "/about" },
+                { label: "Job Vacancies", href: "/job-vacancies" },
+                { label: "Employers", href: "/employers" },
+              ].map((link, index) => {
+                const accent = index % 3 === 0 ? "hover:bg-blue-600" : index % 3 === 1 ? "hover:bg-red-600" : "hover:bg-yellow-500 hover:text-slate-900";
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className={`flex items-center rounded-lg px-3 py-3 text-sm font-semibold text-slate-200 transition-colors ${accent}`}
+                  >
+                    <span>{link.label}</span>
+                  </a>
+                );
+              })}
+            </nav>
+
+            <div className="mt-auto border-t border-white/10 pt-6">
+              <div className="flex flex-col gap-2 sm:flex-row lg:flex-col">
+                <button className="rounded-lg border border-blue-400/30 bg-slate-800/80 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-600">
+                  Login
+                </button>
+                <button className="rounded-lg bg-yellow-400 px-4 py-2.5 text-sm font-semibold text-slate-900 transition-colors hover:bg-yellow-300">
+                  Register
+                </button>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="flex h-full flex-col items-center justify-start pt-2">
+            <button
+              type="button"
+              onClick={() => setIsSidebarOpen(true)}
+              className="flex h-11 w-11 items-center justify-center rounded-lg border border-blue-400/30 bg-blue-600/80 text-xl text-white shadow-md transition-colors hover:bg-blue-500"
+              aria-label="Open navigation"
+            >
+              ☰
             </button>
           </div>
-        </div>
+        )}
       </aside>
 
       <div className="flex-1">
