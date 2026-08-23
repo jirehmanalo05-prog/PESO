@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Employers() {
   return (
     <div className="min-h-screen bg-white font-sans antialiased">
@@ -15,12 +17,12 @@ export default function Employers() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
-              <a
+              <Link
                 href="/"
                 className="text-sm font-medium text-gray-700 hover:text-[#1e3a8a] transition-colors"
               >
                 Home
-              </a>
+              </Link>
               <a
                 href="/about"
                 className="text-sm font-medium text-gray-700 hover:text-[#1e3a8a] transition-colors"
@@ -263,8 +265,8 @@ export default function Employers() {
                     ))}
                   </div>
                   <p className="text-gray-600 text-sm italic mb-2">
-                    "PESO Mabini helped us find qualified candidates quickly and efficiently.
-                    Their local knowledge is invaluable."
+                    &ldquo;PESO Mabini helped us find qualified candidates quickly and efficiently.
+                    Their local knowledge is invaluable.&rdquo;
                   </p>
                   <div className="text-xs text-gray-500">- TechCorp Solutions</div>
                 </div>
@@ -276,8 +278,8 @@ export default function Employers() {
                     ))}
                   </div>
                   <p className="text-gray-600 text-sm italic mb-2">
-                    "Excellent service and support throughout the recruitment process.
-                    Highly recommended for businesses in Mabini."
+                    &ldquo;Excellent service and support throughout the recruitment process.
+                    Highly recommended for businesses in Mabini.&rdquo;
                   </p>
                   <div className="text-xs text-gray-500">- Mabini General Hospital</div>
                 </div>
@@ -591,7 +593,7 @@ export default function Employers() {
             <div>
               <h4 className="text-white font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="/" className="hover:text-white transition">Home</a></li>
+                <li><Link href="/" className="hover:text-white transition">Home</Link></li>
                 <li><a href="/about" className="hover:text-white transition">About Us</a></li>
                 <li><a href="/job-vacancies" className="hover:text-white transition">Job Vacancies</a></li>
                 <li><a href="/employers" className="hover:text-white transition">Employers</a></li>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function JobVacancies() {
   return (
     <div className="min-h-screen bg-white font-sans antialiased">
@@ -15,12 +17,12 @@ export default function JobVacancies() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
-              <a
+              <Link
                 href="/"
                 className="text-sm font-medium text-gray-700 hover:text-[#1e3a8a] transition-colors"
               >
                 Home
-              </a>
+              </Link>
               <a
                 href="/about"
                 className="text-sm font-medium text-gray-700 hover:text-[#1e3a8a] transition-colors"
@@ -214,7 +216,7 @@ export default function JobVacancies() {
                   <span>💰 ₱15,000 - ₱20,000</span>
                 </div>
                 <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  Inspire young minds in our community school. Bachelor's degree in Education required.
+                  Inspire young minds in our community school. Bachelor&apos;s degree in Education required.
                 </p>
                 <button className="w-full px-4 py-2 bg-yellow-400 text-gray-900 font-medium rounded-lg hover:bg-yellow-500 transition-colors">
                   Apply Now
@@ -243,7 +245,7 @@ export default function JobVacancies() {
               Find Jobs by Industry
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Explore opportunities across different sectors and find the career path that's right for you
+              Explore opportunities across different sectors and find the career path that&apos;s right for you
             </p>
           </div>
 
@@ -410,7 +412,7 @@ export default function JobVacancies() {
             <div>
               <h4 className="text-white font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="/" className="hover:text-white transition">Home</a></li>
+                <li><Link href="/" className="hover:text-white transition">Home</Link></li>
                 <li><a href="/about" className="hover:text-white transition">About Us</a></li>
                 <li><a href="/job-vacancies" className="hover:text-white transition">Job Vacancies</a></li>
                 <li><a href="/employers" className="hover:text-white transition">Employers</a></li>
