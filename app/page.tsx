@@ -148,14 +148,16 @@ export default function Home() {
       </aside>
 
       <div className="flex-1">
-        <button
-          type="button"
-          onClick={() => setIsSidebarOpen((prev) => !prev)}
-          className={`fixed left-4 top-4 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-blue-400/30 bg-slate-900 text-xl text-white shadow-xl transition-colors hover:bg-blue-700 ${isSidebarOpen ? "bg-slate-900" : "bg-blue-700"}`}
-          aria-label={isSidebarOpen ? "Close navigation" : "Open navigation"}
-        >
-          ☰
-        </button>
+        {!isSidebarOpen && (
+          <button
+            type="button"
+            onClick={() => setIsSidebarOpen(true)}
+            className="fixed left-4 top-4 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-blue-400/30 bg-blue-700 text-xl text-white shadow-xl transition-colors hover:bg-blue-600"
+            aria-label="Open navigation"
+          >
+            ☰
+          </button>
+        )}
       {/* ════════════════════════
           HERO — Static background image
           ↓ Replace backgroundImage below with your actual photo path.
