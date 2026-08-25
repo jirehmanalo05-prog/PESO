@@ -114,7 +114,7 @@ export default function Home() {
       />
 
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex h-screen flex-col transition-all duration-300 lg:sticky lg:top-0 lg:h-auto ${isSidebarOpen ? "w-72 translate-x-0 border-r border-blue-200 bg-blue-600 p-4 text-white shadow-2xl" : "w-0 -translate-x-full overflow-hidden border-r-0 bg-transparent p-0 shadow-none"}`}
+        className={`fixed inset-y-0 left-0 z-40 flex h-screen flex-col transition-all duration-300 ${isSidebarOpen ? "w-72 translate-x-0 border-r border-blue-200 bg-blue-600 p-4 text-white shadow-2xl" : "w-0 -translate-x-full overflow-hidden border-r-0 bg-transparent p-0 shadow-none"}`}
       >
         {isSidebarOpen ? (
           <>
@@ -159,7 +159,7 @@ export default function Home() {
               })}
             </nav>
 
-            <div className="mt-auto border-t border-white/10 pt-6">
+            <div className="mt-auto shrink-0 border-t border-white/10 pt-6">
               <div className="flex flex-col gap-2 sm:flex-row lg:flex-col">
                 <button className="rounded-lg border border-blue-400/30 bg-slate-800/80 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-600">
                   Login

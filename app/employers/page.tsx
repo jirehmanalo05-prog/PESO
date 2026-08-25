@@ -2,17 +2,17 @@ import Link from "next/link";
 
 export default function Employers() {
   return (
-    <div className="min-h-screen bg-white font-sans antialiased">
+    <div className="min-h-screen bg-gray-50 font-sans antialiased">
       {/* NAVBAR - Clean and professional */}
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <nav className="sticky top-0 z-50 border-b border-blue-800 bg-blue-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-[#1e3a8a] rounded-md flex items-center justify-center shadow-sm">
-                <span className="text-white text-xs font-bold">PM</span>
+              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-yellow-400 shadow-sm">
+                <span className="text-xs font-bold text-blue-950">PM</span>
               </div>
-              <span className="font-bold text-[#1e3a8a] text-xl tracking-tight">PESO<span className="font-normal"> Mabini</span></span>
+              <span className="text-xl font-bold tracking-tight text-white">PESO<span className="font-normal"> Mabini</span></span>
             </div>
 
             {/* Desktop Navigation */}
@@ -45,10 +45,10 @@ export default function Employers() {
 
             {/* Buttons */}
             <div className="flex items-center gap-3">
-              <button className="px-5 py-2 text-sm font-semibold text-[#1e3a8a] border border-[#1e3a8a] rounded-md hover:bg-blue-50 transition-colors">
+              <button className="rounded-md border border-yellow-300 px-5 py-2 text-sm font-semibold text-yellow-300 transition-colors hover:bg-yellow-400 hover:text-blue-950">
                 Login
               </button>
-              <button className="px-5 py-2 text-sm font-semibold text-white bg-[#1e3a8a] rounded-md hover:bg-blue-900 transition-colors shadow-sm">
+              <button className="rounded-md bg-yellow-400 px-5 py-2 text-sm font-semibold text-blue-950 shadow-sm transition-colors hover:bg-yellow-300">
                 Register
               </button>
             </div>
@@ -57,7 +57,7 @@ export default function Employers() {
       </nav>
 
       {/* HERO SECTION - Employer focused */}
-      <section className="relative bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#3b82f6] text-white overflow-hidden">
+      <section className="relative overflow-hidden bg-blue-900 text-white">
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
@@ -576,7 +576,7 @@ export default function Employers() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-gray-900 text-gray-400 py-12">
+      <footer className="bg-yellow-400 py-12 text-yellow-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
@@ -584,14 +584,14 @@ export default function Employers() {
                 <div className="w-8 h-8 bg-[#1e3a8a] rounded-md flex items-center justify-center">
                   <span className="text-white text-xs font-bold">PM</span>
                 </div>
-                <span className="font-bold text-white text-lg">PESO Mabini</span>
+                <span className="text-lg font-bold text-blue-950">PESO Mabini</span>
               </div>
               <p className="text-sm">
                 Connecting job seekers with opportunities in Mabini and beyond.
               </p>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+              <h4 className="mb-4 font-semibold text-blue-950">Quick Links</h4>
               <ul className="space-y-2 text-sm">
                 <li><Link href="/" className="hover:text-white transition">Home</Link></li>
                 <li><a href="/about" className="hover:text-white transition">About Us</a></li>
@@ -600,7 +600,7 @@ export default function Employers() {
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4">Resources</h4>
+              <h4 className="mb-4 font-semibold text-blue-950">Resources</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="#" className="hover:text-white transition">Help Center</a></li>
                 <li><a href="#" className="hover:text-white transition">FAQs</a></li>
@@ -609,7 +609,7 @@ export default function Employers() {
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4">Connect With Us</h4>
+              <h4 className="mb-4 font-semibold text-blue-950">Connect With Us</h4>
               <div className="flex gap-4">
                 <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#1e3a8a] transition">
                   <span>📘</span>
@@ -623,7 +623,7 @@ export default function Employers() {
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+          <div className="mt-8 border-t border-yellow-500 pt-8 text-center text-sm">
             <p>&copy; 2026 PESO Mabini. All rights reserved.</p>
           </div>
         </div>
