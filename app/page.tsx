@@ -174,51 +174,53 @@ export default function Home() {
       </section>
  
       {/* ════════════════════════
-          MODAL CARDS — Below hero
+          PESO UPDATES
       ════════════════════════ */}
-      <section className="py-10 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6">
+      <section className="bg-gray-100 py-14">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 flex items-end justify-between gap-4">
+            <div>
+              <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-bold uppercase tracking-widest text-blue-700">
+                PESO Updates
+              </span>
+              <h2 className="mt-3 text-2xl font-black text-gray-900 md:text-3xl">News from PESO Mabini</h2>
+            </div>
+            <a href="#" className="shrink-0 text-sm font-semibold text-blue-800 hover:underline">
+              View all posts
+            </a>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                icon: "🏢",
-                title: "Public Employment Service Office",
-                desc: "The PESO Mabini provides free employment facilitation services to all job seekers and employers in Mabini, Batangas.",
-                accent: "bg-blue-900",
-                link: "/about",
+                date: "August 20, 2026",
+                caption: "Looking for your next opportunity? Visit the PESO Mabini office for free job matching and employment assistance.",
+                image: "/BG-Peso.jpg",
               },
               {
-                icon: "💼",
-                title: "Find Your Career Today",
-                desc: "Hundreds of job vacancies are available across various industries. Browse listings and apply directly through our portal.",
-                accent: "bg-red-600",
-                link: "/job-vacancies",
+                date: "August 15, 2026",
+                caption: "New vacancies are now available across Mabini and Batangas. Check our job listings and take the next step in your career.",
+                image: "/BG-Peso.jpg",
               },
               {
-                icon: "🎓",
-                title: "Skills & Training Programs",
-                desc: "Access free skills training, livelihood seminars, and career development programs coordinated by DOLE and PESO.",
-                accent: "bg-green-700",
-                link: "/about",
+                date: "August 8, 2026",
+                caption: "Build skills for better work. Follow PESO Mabini for announcements about upcoming training and livelihood programs.",
+                image: "/BG-Peso.jpg",
               },
             ].map((card) => (
-              <div key={card.title} className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                <div className={`h-2 ${card.accent}`} />
-                <div className="p-6">
-                  <div className="text-4xl mb-4">{card.icon}</div>
-                  <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-blue-800 transition-colors">{card.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed mb-5">{card.desc}</p>
-                  <a
-                    href={card.link}
-                    className="inline-flex items-center gap-1 text-sm font-semibold text-blue-800 hover:gap-2 transition-all"
-                  >
-                    Learn more
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
+              <article key={card.date} className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-lg">
+                <img src={card.image} alt="PESO Mabini update" className="aspect-[4/3] w-full object-cover" />
+                <div className="p-5">
+                  <div className="mb-3 flex items-center gap-2 text-xs text-gray-400">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-900 text-[10px] font-black text-yellow-300">PM</div>
+                    <div>
+                      <p className="font-bold text-gray-700">PESO Mabini</p>
+                      <time>{card.date}</time>
+                    </div>
+                  </div>
+                  <p className="text-sm leading-relaxed text-gray-600">{card.caption}</p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
