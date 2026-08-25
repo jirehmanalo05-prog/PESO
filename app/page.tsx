@@ -165,7 +165,7 @@ export default function Home() {
           The dark overlay (bg-black/40) will keep text readable.
       ════════════════════════ */}
       <section
-        className="relative w-full h-screen bg-gray-500 bg-contain bg-center bg-no-repeat"
+        className="relative w-full h-screen bg-red-600 bg-contain bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/BG-Peso.jpg')",
         }}
