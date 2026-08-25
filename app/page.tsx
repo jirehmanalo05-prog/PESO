@@ -435,20 +435,20 @@ export default function Home() {
       {/* ════════════════════════
           FOOTER
       ════════════════════════ */}
-      <footer className="bg-gray-900 text-gray-400 py-12">
+      <footer className="bg-yellow-400 py-12 text-yellow-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 bg-blue-900 rounded-md flex items-center justify-center">
+                <div className="flex h-8 w-8 items-center justify-center rounded-md bg-blue-900">
                   <span className="text-white text-xs font-bold">PM</span>
                 </div>
-                <span className="font-bold text-white text-lg">PESO Mabini</span>
+                <span className="text-lg font-bold text-blue-950">PESO Mabini</span>
               </div>
               <p className="text-sm">Connecting job seekers with opportunities in Mabini and beyond.</p>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-3">Quick Links</h4>
+              <h4 className="mb-3 font-semibold text-blue-950">Quick Links</h4>
               <ul className="space-y-2 text-sm">
                 {["About Us", "Job Vacancies", "Employers", "Contact"].map((l) => (
                   <li key={l}><a href="#" className="hover:text-white transition">{l}</a></li>
@@ -456,7 +456,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-3">Resources</h4>
+              <h4 className="mb-3 font-semibold text-blue-950">Resources</h4>
               <ul className="space-y-2 text-sm">
                 {["Help Center", "FAQs", "Privacy Policy", "Terms of Use"].map((l) => (
                   <li key={l}><a href="#" className="hover:text-white transition">{l}</a></li>
@@ -464,18 +464,18 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-3">Connect With Us</h4>
+              <h4 className="mb-3 font-semibold text-blue-950">Connect With Us</h4>
               <div className="flex gap-3">
                 {["📘", "🐦", "📷"].map((icon) => (
                   <a key={icon} href="#"
-                    className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-900 transition text-sm">
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-yellow-300 text-sm transition hover:bg-blue-900 hover:text-white">
                     {icon}
                   </a>
                 ))}
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
+          <div className="mt-8 border-t border-yellow-500 pt-6 text-center text-sm">
             <p>&copy; 2026 PESO Mabini. All rights reserved.</p>
           </div>
         </div>
