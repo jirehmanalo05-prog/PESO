@@ -1,6 +1,38 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
+const skillRecommendations: Record<string, { title: string; company: string; match: string; reason: string }> = {
+  Administration: {
+    title: "Administrative Assistant",
+    company: "Municipal Government of Mabini",
+    match: "96% match",
+    reason: "Your organization and office skills match this role.",
+  },
+  Construction: {
+    title: "Electrician",
+    company: "Batangas Construction Corp.",
+    match: "92% match",
+    reason: "Your technical skills match this skilled trade opportunity.",
+  },
+  "Customer Service": {
+    title: "Customer Service Representative",
+    company: "Sunrise BPO Solutions",
+    match: "89% match",
+    reason: "Your communication skills match this customer-facing role.",
+  },
+  Healthcare: {
+    title: "School Nurse",
+    company: "Mabini National High School",
+    match: "87% match",
+    reason: "Your healthcare background matches this community role.",
+  },
+};
+
 export default function JobVacancies() {
+  const [selectedSkill, setSelectedSkill] = useState("Administration");
+
   return (
     <div className="min-h-screen bg-gray-50 font-sans antialiased">
       {/* NAVBAR - Clean and professional */}
@@ -132,8 +164,64 @@ export default function JobVacancies() {
         </div>
       </section>
 
+      {/* AI EMPLOYMENT RECOMMENDATIONS */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <div>
+              <span className="rounded-full bg-yellow-100 px-3 py-1 text-xs font-bold uppercase tracking-widest text-yellow-800">
+                Smart Career Match
+              </span>
+              <h2 className="mt-3 text-2xl font-black text-gray-900 md:text-3xl">Find work that fits your skills</h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-gray-500">
+                Choose your strongest skill and our AI-powered matching tool will highlight an employment opportunity that fits your profile.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {Object.keys(skillRecommendations).map((skill) => (
+                  <button
+                    key={skill}
+                    type="button"
+                    onClick={() => setSelectedSkill(skill)}
+                    className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${selectedSkill === skill
+                      ? "border-blue-900 bg-blue-900 text-white"
+                      : "border-gray-200 bg-gray-50 text-gray-600 hover:border-blue-300 hover:text-blue-800"
+                      }`}
+                  >
+                    {skill}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-blue-100 bg-blue-50 p-6 shadow-sm">
+              <div className="mb-5 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-blue-700">Recommended for you</p>
+                  <p className="mt-1 text-sm text-gray-500">Based on your {selectedSkill.toLowerCase()} skills</p>
+                </div>
+                <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">AI matched</span>
+              </div>
+              <div className="rounded-xl bg-white p-5 shadow-sm">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-bold text-gray-900">{skillRecommendations[selectedSkill].title}</h3>
+                    <p className="mt-1 text-sm font-medium text-blue-800">{skillRecommendations[selectedSkill].company}</p>
+                  </div>
+                  <span className="shrink-0 text-sm font-bold text-green-700">{skillRecommendations[selectedSkill].match}</span>
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-gray-500">{skillRecommendations[selectedSkill].reason}</p>
+                <a href="#featured-jobs" className="mt-5 inline-flex rounded-lg bg-blue-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-800">
+                  View matching jobs
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FEATURED JOBS SECTION */}
-      <section className="py-20 bg-gray-50">
+      <section id="featured-jobs" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-12">
