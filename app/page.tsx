@@ -224,6 +224,64 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ════════════════════════
+          PESO POSTS
+      ════════════════════════ */}
+      <section className="bg-white py-14">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8">
+            <span className="rounded-full bg-yellow-100 px-3 py-1 text-xs font-bold uppercase tracking-widest text-yellow-800">
+              PESO Posts
+            </span>
+            <h2 className="mt-3 text-2xl font-black text-gray-900 md:text-3xl">Updates from PESO Mabini</h2>
+            <p className="mt-2 text-sm text-gray-500">Stay informed about programs, announcements, and employment activities.</p>
+          </div>
+
+          <div className="space-y-5">
+            {[
+              {
+                date: "August 5, 2026",
+                title: "Free Skills Training Registration is Open",
+                caption: "Registration is now open for our next skills training program. Visit the PESO Mabini office to reserve your slot.",
+                tag: "Training",
+              },
+              {
+                date: "July 29, 2026",
+                title: "Bring Your Documents to Your Next Job Application",
+                caption: "Prepare your updated resume, valid identification, and certificates before visiting our job matching desk.",
+                tag: "Job Seeker Tips",
+              },
+              {
+                date: "July 22, 2026",
+                title: "PESO Mabini Joins Local Career Orientation",
+                caption: "Our team connected with students and job seekers during a career orientation focused on local employment opportunities.",
+                tag: "Community",
+              },
+            ].map((post) => (
+              <article key={post.date} className="flex flex-col gap-5 rounded-xl border border-gray-200 bg-gray-50 p-5 shadow-sm transition-shadow hover:shadow-md sm:flex-row sm:items-start">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-blue-900 text-lg font-black text-yellow-300">
+                  PM
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="mb-2 flex flex-wrap items-center gap-2 text-xs text-gray-400">
+                    <span className="font-bold text-gray-700">PESO Mabini</span>
+                    <span aria-hidden="true">•</span>
+                    <time>{post.date}</time>
+                    <span className="rounded-full bg-white px-2.5 py-1 font-semibold text-blue-700">{post.tag}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">{post.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600">{post.caption}</p>
+                  <div className="mt-4 flex items-center gap-5 text-xs font-medium text-gray-400">
+                    <span>♡ Helpful</span>
+                    <span>↗ Share</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
  
             {/* ════════════════════════
           STATS BAR
