@@ -147,7 +147,7 @@ export default function JobVacancies() {
                   <p className="text-xs font-bold uppercase tracking-widest text-blue-700">Recommended for you</p>
                   <p className="mt-1 text-sm text-gray-500">Based on your {selectedSkill.toLowerCase()} skills</p>
                 </div>
-                <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">AI matched</span>
+                <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-700">AI matched</span>
               </div>
               <div className="rounded-xl bg-white p-5 shadow-sm">
                 <div className="flex items-start justify-between gap-4">
@@ -155,7 +155,7 @@ export default function JobVacancies() {
                     <h3 className="font-bold text-gray-900">{skillRecommendations[selectedSkill].title}</h3>
                     <p className="mt-1 text-sm font-medium text-blue-800">{skillRecommendations[selectedSkill].company}</p>
                   </div>
-                  <span className="shrink-0 text-sm font-bold text-green-700">{skillRecommendations[selectedSkill].match}</span>
+                  <span className="shrink-0 text-sm font-bold text-red-700">{skillRecommendations[selectedSkill].match}</span>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-gray-500">{skillRecommendations[selectedSkill].reason}</p>
                 <a href="#featured-jobs" className="mt-5 inline-flex rounded-lg bg-blue-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-800">
@@ -192,7 +192,7 @@ export default function JobVacancies() {
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                     <span className="text-[#1e3a8a] font-bold text-sm">TC</span>
                   </div>
-                  <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">New</span>
+                  <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">New</span>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Software Developer</h3>
                 <p className="text-[#1e3a8a] font-medium mb-3">TechCorp Solutions</p>
@@ -322,15 +322,15 @@ export default function JobVacancies() {
             </div>
 
             {/* Category 4 */}
-            <div className="group bg-gray-50 rounded-xl p-6 hover:bg-green-50 transition-colors cursor-pointer">
-              <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <div className="group bg-gray-50 rounded-xl p-6 hover:bg-red-50 transition-colors cursor-pointer">
+              <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Retail</h3>
               <p className="text-gray-600 text-sm mb-3">67 jobs available</p>
-              <div className="text-green-600 font-medium text-sm">View Jobs →</div>
+              <div className="text-red-600 font-medium text-sm">View Jobs →</div>
             </div>
           </div>
         </div>
@@ -393,10 +393,10 @@ export default function JobVacancies() {
 
             {/* Career Counseling */}
             <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="h-2 bg-green-500"></div>
+              <div className="h-2 bg-red-500"></div>
               <div className="p-8">
-                <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-5">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-5">
+                  <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
                 </div>
@@ -404,7 +404,7 @@ export default function JobVacancies() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   Get personalized career advice from our experienced counselors. Schedule a free consultation today.
                 </p>
-                <button className="w-full px-4 py-3 bg-green-500 text-white font-medium rounded-lg hover:bg-green-600 transition-colors">
+                <button className="w-full px-4 py-3 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition-colors">
                   Book Session
                 </button>
               </div>
