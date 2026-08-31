@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const links = [
   { label: "Home", href: "/" },
@@ -39,8 +40,8 @@ export default function NavigationDrawer() {
         </nav>
         <div className="mt-auto shrink-0 border-t border-white/10 pt-6">
           <div className="flex flex-col gap-2">
-            <button className="rounded-lg border border-blue-400/30 bg-slate-800/80 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-600">Login</button>
-            <button className="rounded-lg bg-yellow-400 px-4 py-2.5 text-sm font-semibold text-slate-900 transition-colors hover:bg-yellow-300">Register</button>
+            <Link href="/login" onClick={() => setIsOpen(false)} className="rounded-lg border border-blue-400/30 bg-slate-800/80 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-600 text-center">Login</Link>
+            <Link href="/register" onClick={() => setIsOpen(false)} className="rounded-lg bg-yellow-400 px-4 py-2.5 text-sm font-semibold text-slate-900 transition-colors hover:bg-yellow-300 text-center">Register</Link>
           </div>
         </div>
       </aside>
