@@ -73,15 +73,33 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center px-4 py-8">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen bg-gray-50 font-sans antialiased">
+      {/* ════════════════════════
+          BACKGROUND IMAGE SECTION
+          ↓ Replace backgroundImage below with your actual photo path.
+          e.g. backgroundImage: "url('/images/register-bg.jpg')"
+      ════════════════════════ */}
+      <section
+        className="relative w-full h-64 bg-blue-600 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/BG-Peso.jpg')",
+        }}
+      >
+        {/* Optional dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/30"></div>
+      </section>
+
+      {/* ════════════════════════
+          REGISTER FORM CONTAINER
+      ════════════════════════ */}
+      <div className="relative -mt-32 mx-auto max-w-md px-4 pb-8">
         {/* Logo Card */}
         <div className="text-center mb-8">
           <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-yellow-400 text-3xl font-black text-slate-900 shadow-2xl mb-6">
             PM
           </div>
-          <h1 className="text-3xl font-black text-white">PESO Mabini</h1>
-          <p className="text-blue-100 mt-2">Employment Services Portal</p>
+          <h1 className="text-3xl font-black text-gray-900">PESO Mabini</h1>
+          <p className="text-gray-600 mt-2">Employment Services Portal</p>
         </div>
 
         {/* Register Form Card */}
@@ -266,7 +284,7 @@ export default function RegisterPage() {
         </div>
 
         {/* Footer */}
-        <div className="mt-8 text-center text-blue-100 text-xs">
+        <div className="mt-8 text-center text-gray-600 text-xs">
           <p>Secure employment portal • Your data is protected</p>
           <p className="mt-2">© 2024 PESO Mabini. All rights reserved.</p>
         </div>
