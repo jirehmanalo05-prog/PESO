@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
@@ -38,11 +39,15 @@ export default function LoginPage() {
           e.g. backgroundImage: "url('/images/login-bg.jpg')"
       ════════════════════════ */}
       <section
-        className="relative w-full h-64 bg-blue-600 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/BG-Peso.jpg')",
-        }}
+        className="relative w-full bg-blue-600"
       >
+        <Image
+          src="/BG-Peso.jpg"
+          alt=""
+          width={1920}
+          height={1080}
+          className="block h-auto w-full object-contain"
+        />
         {/* Optional dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/30"></div>
       </section>
@@ -144,7 +149,7 @@ export default function LoginPage() {
           {/* Sign Up Link */}
           <div className="text-center pt-4 border-t border-gray-200">
             <p className="text-sm text-gray-600">
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <Link href="/register" className="text-blue-600 hover:text-blue-700 font-bold">
                 Sign up here
               </Link>

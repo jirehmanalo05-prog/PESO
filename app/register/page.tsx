@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
@@ -80,11 +81,15 @@ export default function RegisterPage() {
           e.g. backgroundImage: "url('/images/register-bg.jpg')"
       ════════════════════════ */}
       <section
-        className="relative w-full h-64 bg-blue-600 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/BG-Peso.jpg')",
-        }}
+        className="relative w-full bg-blue-600"
       >
+        <Image
+          src="/BG-Peso.jpg"
+          alt=""
+          width={1920}
+          height={1080}
+          className="block h-auto w-full object-contain"
+        />
         {/* Optional dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/30"></div>
       </section>
