@@ -35,7 +35,7 @@ export default function NavigationDrawer() {
         <nav className="mt-8 space-y-2">
           {links.map((link, index) => {
             const accent = index % 3 === 0 ? "hover:bg-blue-600" : index % 3 === 1 ? "hover:bg-red-600" : "hover:bg-yellow-500 hover:text-slate-900";
-            return <a key={link.label} href={link.href} onClick={() => setIsOpen(false)} className={`flex items-center rounded-lg px-3 py-3 text-sm font-semibold text-slate-200 transition-colors ${accent}`}>{link.label}</a>;
+            return <Link key={link.label} href={link.href} onClick={() => setIsOpen(false)} className={`flex items-center rounded-lg px-3 py-3 text-sm font-semibold text-slate-200 transition-colors ${accent}`}>{link.label}</Link>;
           })}
         </nav>
         <div className="mt-auto shrink-0 border-t border-white/10 pt-6">

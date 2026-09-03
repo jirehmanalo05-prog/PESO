@@ -283,9 +283,9 @@ export default function About() {
               <h4 className="mb-4 font-semibold text-blue-950">Quick Links</h4>
               <ul className="space-y-2 text-sm">
                 <li><Link href="/" className="hover:text-white transition">Home</Link></li>
-                <li><a href="/about" className="hover:text-white transition">About Us</a></li>
-                <li><a href="/job-vacancies" className="hover:text-white transition">Job Vacancies</a></li>
-                <li><a href="/employers" className="hover:text-white transition">Employers</a></li>
+                <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
+                <li><Link href="/job-vacancies" className="hover:text-white transition">Job Vacancies</Link></li>
+                <li><Link href="/employers" className="hover:text-white transition">Employers</Link></li>
               </ul>
             </div>
             <div>

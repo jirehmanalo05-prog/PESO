@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const jobPostings = [
   {
     title: "Administrative Assistant",
@@ -228,13 +230,13 @@ export default function Home() {
               </span>
               <h2 className="text-2xl md:text-3xl font-black text-gray-900 mt-2">Available Opportunities</h2>
             </div>
-            <a href="/job-vacancies"
+            <Link href="/job-vacancies"
               className="text-sm font-semibold text-blue-800 hover:underline flex items-center gap-1">
               View All
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </a>
+            </Link>
           </div>
  
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -313,13 +315,13 @@ export default function Home() {
         <p className="text-blue-200 text-sm mb-6 max-w-xl mx-auto">
           Join thousands of job seekers who found their dream careers through PESO Mabini.
         </p>
-        <a href="/job-vacancies"
+        <Link href="/job-vacancies"
           className="inline-flex items-center gap-2 px-7 py-3 bg-yellow-400 text-blue-900 font-bold rounded-lg hover:bg-yellow-300 transition shadow-lg text-sm">
           Get Started Today
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
-        </a>
+        </Link>
       </section>
  
       {/* ════════════════════════
